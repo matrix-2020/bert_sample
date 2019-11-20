@@ -1,7 +1,7 @@
 # Python sample code for BERT  model
 
 ## BERT Introduction
-BERT model is developed by Google, it's a new method of pre-praining language represenatations which performs state-of-the-art results on a wide array of Natural Language Processing (NLP) tasks, for detailed please find it on [github](https://github.com/google-research/bert).
+BERT model is developed by Google, it's a new method of pre-praining language represenatations which performs state-of-the-art results on a wide array of Natural Language Processing (NLP) tasks, for detail please find it on [github](https://github.com/google-research/bert).
 
 ## Download model and Convert to IR
 Download pre-trained BERT model from this [link](https://storage.googleapis.com/bert_models/2018_11_03/multilingual_L-12_H-768_A-12.zip).
