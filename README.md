@@ -1,7 +1,7 @@
 # Python sample code for BERT  model
 
 ## BERT Introduction
-BERT model is developed by Google, it's a new method of pre-praining language represenatations which performs state-of-the-art results on a wide array of Natural Language Processing (NLP) tasks, for detail please find it on [github](https://github.com/google-research/bert).
+BERT model is developed by Google, it's a new method of pre-praining language represenatations which performs state-of-the-art results on a wide array of Natural Language Processing (NLP) tasks, for details please find it on [github](https://github.com/google-research/bert).
 
 ## Download model and Convert to IR
 Download pre-trained BERT model from this [link](https://storage.googleapis.com/bert_models/2018_11_03/multilingual_L-12_H-768_A-12.zip).
@@ -37,4 +37,4 @@ Please install OpenVINO and source the OPENVINO_INSTALLDIR/openvino/bin/setupvar
 
   The command is same as above:
 
-  python3 bert_encoding.py -m PATH_TO_MODEL/bert_model.ckpt.xml -l PATH_TO_CPU_EXTENSION/libcpu_extension.so -d CPU
+  python3 bert_semantic_search_demo.py -m PATH_TO_MODEL/bert_model.ckpt.xml -l PATH_TO_CPU_EXTENSION/libcpu_extension.so -d CPU
