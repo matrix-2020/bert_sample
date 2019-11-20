@@ -26,7 +26,7 @@ Please install OpenVINO and source the OPENVINO_INSTALLDIR/openvino/bin/setupvar
 
   The command is:
 
-  python3 bert_encoding.py -m PATH_TO_MODEL/bert_model.ckpt.xml -l PATH_TO_CPU_EXTENSION/libcpu_extension.so -d CPU
+  python3 bert_encoding.py -m path_to_model/bert_model.ckpt.xml -l path_to_cpu_extension/libcpu_extension.so -d CPU
 
   For example:
 
@@ -37,4 +37,4 @@ Please install OpenVINO and source the OPENVINO_INSTALLDIR/openvino/bin/setupvar
 
   The command is same as above:
 
-  python3 bert_semantic_search_demo.py -m PATH_TO_MODEL/bert_model.ckpt.xml -l PATH_TO_CPU_EXTENSION/libcpu_extension.so -d CPU
+  python3 bert_semantic_search_demo.py -m path_to_model/bert_model.ckpt.xml -l path_to_cpu_extension/libcpu_extension.so -d CPU
