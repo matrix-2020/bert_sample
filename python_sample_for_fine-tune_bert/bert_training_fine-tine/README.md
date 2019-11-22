@@ -36,12 +36,14 @@ The fine-tune process was done on TensorFlow with version 1.12.0, higher version
    (1). Modify code to disable dropout layer
 
         in run_classifier.py, modify code as blow to make flag "is_training" is False and save file.
-
+        ```
         #is_training = (mode == tf.estimator.ModeKeys.TRAIN)
         is_training = False
+        ```
 
    (2). Fine-tine model, init_checkpoint comes from directory "result1", and save fine-tuned mode in directory "result2".
 
+         ```
          python3 run_classifier.py  --do_train=true   --do_eval=true   \
          --vocab_file=$BERT_BASE_DIR/vocab.txt   \
          --bert_config_file=$BERT_BASE_DIR/bert_config.json   \
@@ -51,9 +53,11 @@ The fine-tune process was done on TensorFlow with version 1.12.0, higher version
          --learning_rate=2e-5   \
          --num_train_epochs=3.0   \
          --output_dir=./result2/
+         ```
 
 5. Run prediction with fine-tune BET model.
 
+    ```
     python3 run_classifier_predcit.py  \
     --do_train=false   \
     --do_eval=false \
@@ -62,6 +66,7 @@ The fine-tune process was done on TensorFlow with version 1.12.0, higher version
     --bert_config_file=$BERT_BASE_DIR/bert_config.json \
     --init_checkpoint=result2/model.ckpt-468 \
     --output_dir=result2/
+    ```
 
     You'll find predictions for 4 movie reviews like this:
 
@@ -79,20 +84,20 @@ The fine-tuned model doesn't save topology for the fully connected layer in chec
 
 1. convert checkpoint to .pb foramt, removing many unneeded nodes, total 1636 ops are saved, after conversion, we will get bert-finetune.pb
 
-   python3 ckt_to_pb.py
+   `python3 ckt_to_pb.py`
 
 2. export weight and bias for fully connected layer, the weight and bias will be saved in file "weight.npy", "bias.npy" respectively.
 
-    python3 export_fc.py
+    `python3 export_fc.py`
 
 3. Convert BERT model using OpenVINO
 
    In OpenVINO MO path, such as "/opt/intel/openvino/deployment_tools/model_optimizer",
    execute below command to convert .pb format BERT model:
 
-   python3 ./mo_tf.py --input_model path_to_bert_model/bert-finetune.pb --input IteratorGetNext:0,IteratorGetNext:1,IteratorGetNext:3 --input_shape [1,128],[1,128],[1,128] --output bert/pooler/dense/Tanh  --disable_nhwc_to_nchw
+   `python3 ./mo_tf.py --input_model path_to_bert_model/bert-finetune.pb --input IteratorGetNext:0,IteratorGetNext:1,IteratorGetNext:3 --input_shape [1,128],[1,128],[1,128] --output bert/pooler/dense/Tanh  --disable_nhwc_to_nchw`
 
 ## Run inference using OpenVINO
 Copy converted BERT model, weight.npy and bias,npy to directory "python_sample_for_fine-tune_bert", and run below command to infer, please change the libcpu_extension.so path if needed on your machine.
 
-  python3 bert_fine-tune_for_movie-review.py -m path_to_bert-model/bert-finetune.xml -l /opt/intel/openvino/inference_engine/lib/intel64/libcpu_extension_avx512.so -d CPU
+  `python3 bert_fine-tune_for_movie-review.py -m path_to_bert-model/bert-finetune.xml -l /opt/intel/openvino/inference_engine/lib/intel64/libcpu_extension_avx512.so -d CPU`
