@@ -30,7 +30,7 @@ Please install OpenVINO and source the OPENVINO_INSTALLDIR/openvino/bin/setupvar
 
   For example:
 
-  python3 bert_encoding_demo.py -m bert_model.ckpt.xml -l /opt/intel/openvino/inference_engine/lib/intel64/libcpu_extension_avx512.so -d CPU
+  `python3 bert_encoding_demo.py -m bert_model.ckpt.xml -l /opt/intel/openvino/inference_engine/lib/intel64/libcpu_extension_avx512.so -d CPU`
 
 
 * BERT semantic search sample
