@@ -12,10 +12,11 @@ The fine-tune process was done on TensorFlow with version 1.12.0, higher version
 
 2. Export pre-trained model path
 
-     export BERT_BASE_DIR = path_to_model/pre-train-model/multilingual_L-12_H-768_A-12
+     `export BERT_BASE_DIR = path_to_model/pre-train-model/multilingual_L-12_H-768_A-12`
 
 3. Train BERT model with few epochs
 
+   ```
    python3 run_classifier.py  --do_train=true   \
    --do_eval=true   \
    --vocab_file=$BERT_BASE_DIR/vocab.txt   \
@@ -26,6 +27,7 @@ The fine-tune process was done on TensorFlow with version 1.12.0, higher version
    --learning_rate=2e-5   \
    --num_train_epochs=3.0 \
    --output_dir=./result1/
+   ```
 
    The fine-tined model will be saved in directory "result1", the accuracy is about 0.8436. Since by default the fine-tined model contains dropout layer which can't be converted by OpenVINO toolkit, we remove the dropout layer, so we fine-tine again the BERT model without dropout.
 

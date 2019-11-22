@@ -8,4 +8,4 @@ For how to fine-tune BERT model and use OpenVINO to convert BERT model, please g
 ## Run inference using OpenVINO
 After get converted fine-tuned BERT model, run below command to infer, please change the libcpu_extension.so path if needed on your machine.
 
-  python3 bert_fine-tune_for_movie-review.py -m path_to_bert-model/bert-finetune.xml -l /opt/intel/openvino/inference_engine/lib/intel64/libcpu_extension_avx512.so -d CPU
+  `python3 bert_fine-tune_for_movie-review.py -m path_to_bert-model/bert-finetune.xml -l /opt/intel/openvino/inference_engine/lib/intel64/libcpu_extension_avx512.so -d CPU`
