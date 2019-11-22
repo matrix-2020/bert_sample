@@ -9,7 +9,7 @@ Download pre-trained BERT model from this [link](https://storage.googleapis.com/
 For how to convert TensorFlow BERT model to IR, please follow the user guide in [OpenVINO](https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_BERT_From_Tensorflow.html).
 
 ## Sample code introduction
-BERT model is some kinds of word2vec, its output is a vector. For specific application, general principle is to cascade a network with BERT model, and fine-tune whole model to get better performance. Here we just use the pre-trained BERT model and demonstrate the usage and function of BERT.
+BERT model is some kinds of word2vec, its output is a vector. For specific application, general principle is to cascade a network with BERT model, and fine-tune whole model to get better performance. Here we just use the pre-trained BERT model and demonstrate the usage and function of BERT,for using fine-tuned BERT model to do infernce, please go to directory "python_sample_for_fine-tune_bert".
 
 Here are two sample codes for BERT model, one is encoding, it encodes a sentence to a vector, the sentence will go through a series of pre-process and get 3 feature vectors which dimension are all 1\*128, then the feature vectors are fed into BERT model, and BERT model output a vector, which dimension is 1\*768.
 
