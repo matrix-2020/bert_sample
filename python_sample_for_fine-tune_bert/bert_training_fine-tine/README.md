@@ -69,24 +69,21 @@ The fine-tune process was done on TensorFlow with version 1.12.0, higher version
     ```
 
     You'll find predictions for 4 movie reviews like this:
-
+     ```
      ('That movie was absolutely awful', array([0.9951434 , 0.00485664], dtype=float32), 'Negative')
-
      ('The acting was a bit lacking', array([0.994231  , 0.00576904], dtype=float32), 'Negative')
-
      ('The film was creative and surprising', array([0.00695132, 0.99304867], dtype=float32), 'Positive')
-
      ('Absolutely fantastic!', array([0.00698267, 0.9930173 ], dtype=float32), 'Positive')
-
+     ```
 
 ## Convert Fine-tuned BERT model using OpenVINO
 The fine-tuned model doesn't save topology for the fully connected layer in checkpoint file, so we export BERT model and cascaded fully connected layer separately.
 
-1. convert checkpoint to .pb foramt, removing many unneeded nodes, total 1636 ops are saved, after conversion, we will get bert-finetune.pb
+1. Convert checkpoint to .pb foramt, removing many unneeded nodes, total 1636 ops are saved, after conversion, we will get bert-finetune.pb
 
    `python3 ckt_to_pb.py`
 
-2. export weight and bias for fully connected layer, the weight and bias will be saved in file "weight.npy", "bias.npy" respectively.
+2. Export weight and bias for fully connected layer, the weight and bias will be saved in file "weight.npy", "bias.npy" respectively.
 
     `python3 export_fc.py`
 
