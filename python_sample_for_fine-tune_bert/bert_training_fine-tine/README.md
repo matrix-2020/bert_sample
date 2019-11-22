@@ -36,14 +36,14 @@ The fine-tune process was done on TensorFlow with version 1.12.0, higher version
    (1). Modify code to disable dropout layer
 
         in run_classifier.py, modify code as blow to make flag "is_training" is False and save file.
-        ```
+        
         #is_training = (mode == tf.estimator.ModeKeys.TRAIN)
         is_training = False
-        ```
+        
 
    (2). Fine-tine model, init_checkpoint comes from directory "result1", and save fine-tuned mode in directory "result2".
 
-         ```
+         
          python3 run_classifier.py  --do_train=true   --do_eval=true   \
          --vocab_file=$BERT_BASE_DIR/vocab.txt   \
          --bert_config_file=$BERT_BASE_DIR/bert_config.json   \
@@ -53,7 +53,7 @@ The fine-tune process was done on TensorFlow with version 1.12.0, higher version
          --learning_rate=2e-5   \
          --num_train_epochs=3.0   \
          --output_dir=./result2/
-         ```
+         
 
 5. Run prediction with fine-tune BET model.
 
