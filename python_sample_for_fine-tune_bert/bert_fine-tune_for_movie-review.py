@@ -87,7 +87,7 @@ def main():
     exec_net = ie.load_network(network=net, device_name=args.device)
     log.info("--------loading time is: {:.3f}s".format(time()-time1))
 
-    #-------------------load weight and bias for full-connection layer
+    #-------------------load weight and bias for fc(full-connected) layer
     fc_weight = np.load('weight.npy')
     fc_bias = np.load('bias.npy')
 
