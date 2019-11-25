@@ -31,7 +31,7 @@ The fine-tune process was done on TensorFlow with version 1.12.0, higher version
 
    The fine-tined model will be saved in directory "result1", the accuracy is about 0.8436. Since by default the fine-tined model contains dropout layer which can't be converted by OpenVINO toolkit, we need to remove the dropout layer, so we fine-tune again BERT model without dropout.
 
-4. Fine-tine previous BERT model from directory "result1" without dropout layer
+4. Fine-tune previous BERT model from directory "result1" without dropout layer
 
    (1). Modify code to disable dropout layer
 
@@ -41,7 +41,7 @@ The fine-tune process was done on TensorFlow with version 1.12.0, higher version
         is_training = False
         
 
-   (2). Fine-tine model, init_checkpoint comes from directory "result1", and save fine-tuned mode in directory "result2".
+   (2). Fine-tune model, init_checkpoint comes from directory "result1", and save fine-tuned mode in directory "result2".
 
          
          python3 run_classifier.py  --do_train=true   --do_eval=true   \
