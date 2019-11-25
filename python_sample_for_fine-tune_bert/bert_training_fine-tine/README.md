@@ -83,7 +83,7 @@ The fine-tuned model doesn't save topology for the fully connected layer in chec
 
    `python3 ckt_to_pb.py`
 
-2. Export weight and bias for fully connected layer, the weight and bias will be saved in file "weight.npy", "bias.npy" respectively.
+2. Export weight and bias for fully connected layer, the weight and bias will be saved in file "weight.npy" and "bias.npy" respectively.
 
     `python3 export_fc.py`
 
