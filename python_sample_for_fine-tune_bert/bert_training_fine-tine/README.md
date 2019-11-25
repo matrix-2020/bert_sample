@@ -29,7 +29,7 @@ The fine-tune process was done on TensorFlow with version 1.12.0, higher version
    --output_dir=./result1/
    ```
 
-   The fine-tined model will be saved in directory "result1", the accuracy is about 0.8436. Since by default the fine-tined model contains dropout layer which can't be converted by OpenVINO toolkit, we remove the dropout layer, so we fine-tune again BERT model without dropout.
+   The fine-tined model will be saved in directory "result1", the accuracy is about 0.8436. Since by default the fine-tined model contains dropout layer which can't be converted by OpenVINO toolkit, we need to remove the dropout layer, so we fine-tune again BERT model without dropout.
 
 4. Fine-tine previous BERT model from directory "result1" without dropout layer
 
