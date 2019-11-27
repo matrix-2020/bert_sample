@@ -55,7 +55,7 @@ The fine-tune process was done on TensorFlow with version 1.12.0, higher version
          --output_dir=./result2/
          
 
-5. Run prediction with fine-tune BET model.
+5. Run prediction with fine-tune BERT model.
 
     ```
     python3 run_classifier_predcit.py  \
