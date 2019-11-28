@@ -14,7 +14,7 @@ BERT model is some kinds of word2vec, its output is a vector. For specific appli
 Here are two sample codes for BERT model, one is encoding, it encodes a sentence to a vector, the sentence will go through a series of pre-process and get 3 feature vectors which dimension are all 1\*128, then the feature vectors are fed into BERT model, and BERT model output a vector, which dimension is 1\*768.
 
 The second sample code is similar with the [repo](https://github.com/hanxiao/bert-as-service), use BERT to build a QA semantic search engine. The sample receives a sentence as input, and it outputs 5 most similar sentences in the registered questions.txt file.
-Since the numbers of registered sentences is small and the BERT is not fine-tuned, it'll not always work well on any input sentence.
+Since the number of registered sentences is small and the BERT is not fine-tuned, it'll not always work well on any input sentence.
 
 
 >**Note**:some of the codes are borrowed from Google, for license please follow Google's policy.
