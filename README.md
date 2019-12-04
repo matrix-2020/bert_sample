@@ -1,4 +1,5 @@
-# Python sample code for BERT  model
+# BERT model Python* Demo
+-------------------------------------------------------------------
 
 ## BERT Introduction
 BERT model is developed by Google, it's a new method of pre-praining language represenatations which performs state-of-the-art results on a wide array of Natural Language Processing (NLP) tasks, for details please find it on [github](https://github.com/google-research/bert).
@@ -8,7 +9,7 @@ Download pre-trained BERT model from this [link](https://storage.googleapis.com/
 
 For how to convert TensorFlow BERT model to IR, please follow the user guide in [OpenVINO](https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_convert_model_tf_specific_Convert_BERT_From_Tensorflow.html).
 
-## Sample code introduction
+## How It Works
 BERT model is some kinds of word2vec, its output is a vector. For specific application, general principle is to cascade a network with BERT model, and fine-tune whole model to get better performance. Here we just use the pre-trained BERT model and demonstrate the usage and function of BERT,for using fine-tuned BERT model to do infernce, please go to directory "python_sample_for_fine-tune_bert".
 
 Here are two sample codes for BERT model, one is encoding, it encodes a sentence to a vector, the sentence will go through a series of pre-process and get 3 feature vectors which dimension are all 1\*128, then the feature vectors are fed into BERT model, and BERT model output a vector, which dimension is 1\*768.
@@ -19,7 +20,8 @@ Since the number of registered sentences is small and the BERT is not fine-tuned
 
 >**Note**:some of the codes are borrowed from Google, for license please follow Google's policy.
 
-## Run sample code
+## Runninig
+-------------------------------------------------------------------------------
 
 Please install OpenVINO and source the OPENVINO_INSTALLDIR/openvino/bin/setupvars.sh. We tested these sample code on OpenVINO 2019R3.
 * BERT encoding sample
@@ -38,3 +40,7 @@ Please install OpenVINO and source the OPENVINO_INSTALLDIR/openvino/bin/setupvar
   The command is same as above:
 
   `python3 bert_encoding_demo.py -m path_to_model/bert_model.ckpt.xml -l path_to_cpu_extension/libcpu_extension.so -d CPU`
+  
+## Demo Output
+-------------------------------------------------------------------------------
+
