@@ -21,7 +21,6 @@ Since the number of registered sentences is small and the BERT is not fine-tuned
 >**Note**:some of the codes are borrowed from Google, for license please follow Google's policy.
 
 ## Runninig
-------------------------------------------
 Please install OpenVINO and source the OPENVINO_INSTALLDIR/openvino/bin/setupvars.sh. We tested these sample code on OpenVINO 2019R3.
 * BERT encoding sample
 
@@ -41,6 +40,5 @@ Please install OpenVINO and source the OPENVINO_INSTALLDIR/openvino/bin/setupvar
   `python3 bert_semantic_search_demo.py -m path_to_model/bert_model.ckpt.xml -l path_to_cpu_extension/libcpu_extension.so -d CPU`
   
 ## Demo Output
----------------------------------------
 * For bert_encoding_demo, it will output values of an array in 1*768 dimension, which is original BERT output, kind of word embedding, feature encoding/vector.
 * For bert_semantic_search_demo, it will get a sentences as input and output most 5 matched sentences.
