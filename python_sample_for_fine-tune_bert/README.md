@@ -1,4 +1,4 @@
-# Python sample code for fine-tuned BERT model
+# Fine-tuned BERT model Python* Demo
 
 ## Introduction
 This sample code show how to run fine-tuned BERT model using OpenVINO toolkit on a simple specific task to predict whether an IMDB movie review is positive or negative.
