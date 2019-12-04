@@ -1,5 +1,4 @@
 # BERT model Python* Demo
----------------------------------------------------------------------------
 
 ## BERT Introduction
 BERT model is developed by Google, it's a new method of pre-praining language represenatations which performs state-of-the-art results on a wide array of Natural Language Processing (NLP) tasks, for details please find it on [github](https://github.com/google-research/bert).
