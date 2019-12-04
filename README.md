@@ -22,7 +22,6 @@ Since the number of registered sentences is small and the BERT is not fine-tuned
 
 ## Runninig
 ------------------------------------------
-
 Please install OpenVINO and source the OPENVINO_INSTALLDIR/openvino/bin/setupvars.sh. We tested these sample code on OpenVINO 2019R3.
 * BERT encoding sample
 
